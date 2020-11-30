@@ -2,32 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断鼠标按钮以及修饰键</title>
     <style>
-        #box {
-            width: 200px;height:200px;
-            background-color: gray;
+        div{
+            width: 100px;
+            height:100px;
+            border: 1px solid red ;
         }
     </style>
 </head>
 <body>
-    <div id="box">
-        <button id="myButton">click me</button>
-    </div>
-
+    <div>test</div>
     <script>
-        const box = document.querySelector("#box")
-        const myButton = document.querySelector("#myButton")
+        const oDiv = document.querySelector('div')
+        oDiv.addEventListener('mousedown',(e)=>{
+            //点击鼠标改变个数
+            // oDiv.textContent = `你按的鼠标的${e.button}`
 
-        box.addEventListener('click', (e) => {
-            console.clear()
-            console.log(e.isTrusted)
-            console.log(`event.type:${e.type}`)
-            console.log(`event.target: ${e.target.tagName}`)
-            console.log(`event.currentTarget:${e.currentTarget}`)
+            // oDiv.textContent = `你按了几个键${e.buttons}`
+            // //left 1  ,  right 2  , middle 4
+
+
+            //点击Ctrl和鼠标变true
+            oDiv.textContent = `Ctrl:${e.ctrlKey}`
+            // oDiv.textContent = `alt:${e.altKey}`
+            // oDiv.textContent = `shift:${e.shiftKey}`
+            // oDiv.textContent = `meta:${e.metaKey}`
         })
-
     </script>
+    
 </body>
+
 </html>

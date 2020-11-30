@@ -2,40 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标点击事件示例</title>
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: antiquewhite;
+        }
+    </style>
 </head>
 <body>
-    <div id="box">test</div>
+    <div>test</div>
     <script>
-        const box = document.querySelector('#box')
-        const callback = (e) => {
-            console.log(e)
-            for (let prop in e) {
-                console.log(prop)
-            }
-        }
+         const oDiv = document.querySelector('div')
+         oDiv.addEventListener('click',()=>{
+             console.log('-->click');
+         })
 
-        box.addEventListener('click', callback)
+         oDiv.addEventListener('dblclick',()=>{
+             console.log('-->dblclick');
+         })
 
+         oDiv.addEventListener('mousedown',()=>{
+             console.log('-->mousedown');
+         })
 
-        // 创建一个自定义事件
-        const helloEvent = new Event('hello',{bubbles:true, cancelable:false})
-        // const helloEvent = new customEvent('hello',{bubbles:true, cancelable:false})
+         oDiv.addEventListener('mouseup',()=>{
+             console.log('-->mouseup');
+         })
+         
 
-        const helloCallback = (event) => {
-            box.textContent = 'hello, event'
-    
-        }
+         oDiv.addEventListener('mouseenter',()=>{
+             console.log('-->mouseenter');
+         })
 
-        box.addEventListener('hello', helloCallback)
+         oDiv.addEventListener('mouseleave',()=>{
+             console.log('-->mouseleave');
+         })
 
-        document.body.addEventListener('hello',() => {
-            console.log('hello')
-        })
-
-        box.dispatchEvent(helloEvent)
 
     </script>
+    
 </body>
 </html>

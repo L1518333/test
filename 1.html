@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <style>
-        .list{
-            border: 1px dotted gray;
-            background-color:indianred;
-
-        }
-        .list1{
-            border: 1px dotted red;
-            background-color: burlywood;
-        }
-
-
-    </style>
+    <title>图片加载 </title>
 </head>
 <body>
-    <ul id="list1" >
-        <li>Java</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-    </ul>
-    <!-- <script src="1.js"></script> -->
-    <!-- <script src="2.js"></script> -->
-    <button id="myButton1">Button1</button>
-    <script src="3.js"></script>
+    <img src="84.jpg" alt="Logo">
+    <script>
+        window.addEventListener('load',(e) =>{
+            alert('test')
+        })//图片加载之后弹出
+
+        const oImage = document.querySelector('img')
+
+        oImage.addEventListener('load',(e)=>{
+            alert('图片加载之前弹出')
+        })
+        
+        oImage.addEventListener('error',(e)=>{
+            alert('error')
+        })
+
+        window.addEventListener('unload',(e) =>{
+            alert('unload')
+        })
+
+        //keyCode 只适用于keydown和keyup里面
+    </script>
+    
 </body>
 </html>
